@@ -25,6 +25,8 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
+/.next
+
 # local env files
 .env*.local
 
@@ -32,3 +34,8 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+Dockerfile
+.dockerignore
+
+package-lock.json

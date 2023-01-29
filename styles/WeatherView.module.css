@@ -1,0 +1,146 @@
+.loading {
+  width: 100%;
+  min-height: 200px;
+  background: linear-gradient(130deg, black, var(--main-color), black);
+  background-size: 200% 100%;
+}
+
+.pageContainer > .loading {
+  width: 80%;
+  height: 60vh;
+}
+
+.view {
+  opacity: 0;
+  max-height: 100vh;
+  height: fit-content;
+  transition: max-height 0.4s ease-in-out;
+}
+
+.view,
+.viewComponent {
+  background-color: var(--container);
+  color: white;
+  border-radius: 8px;
+}
+
+.viewComponent {
+  cursor: default;
+}
+
+.view.loading {
+  opacity: 1;
+}
+
+.topColumn {
+  z-index: 2;
+  margin-bottom: 18px;
+}
+
+.line {
+  line-height: 20px;
+}
+
+.bottomMidCol {
+  border: solid var(--divider);
+  border-width: 0 2px;
+  padding: 0 15px;
+}
+
+.viewComponent .bottomMidCol {
+  padding: 0 5%;
+}
+
+.midIcon {
+  margin: 5px 0;
+}
+
+.closeBtn {
+  color: white;
+  margin: 0 5px;
+  opacity: 1;
+  background: transparent;
+  cursor: pointer;
+}
+
+.closeBtn:hover {
+  filter: drop-shadow(0 0 8px white);
+}
+
+.viewComponent {
+  width: 80%;
+}
+
+.viewColumn {
+  width: 20%;
+  margin: 5%;
+}
+
+.view .column {
+  margin: 15px;
+}
+
+.viewComponent .column {
+  margin: 25px 5%;
+}
+
+.spanText01 {
+  font-size: 3rem;
+}
+
+.spanText02 {
+  font-size: 0.9rem;
+}
+
+.spanBold {
+  font-weight: 600;
+}
+
+.row {
+  font-size: 0.8rem;
+}
+
+@media screen and (max-width: 800px) {
+  .viewColumn {
+    width: unset;
+  }
+  .viewComponent .column {
+    margin: 25px 3%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .view {
+    scale: 0.8;
+  }
+  .viewComponent .column {
+    margin: 5px;
+    width: 80%;
+    text-align: center;
+  }
+  .viewComponent .spanText01 {
+    font-size: 2rem;
+  }
+  .viewComponent .spanText02 {
+    font-size: 0.7rem;
+  }
+  .viewComponent .spanBold {
+    font-weight: 500;
+  }
+  .viewComponent .bottomMidCol {
+    padding: 15px;
+    border-width: 2px 0;
+  }
+  .viewComponent .row {
+    margin: 15px;
+    flex-direction: column;
+  }
+  .viewComponent .midIcon {
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .view {
+    scale: 0.7;
+  }
+}

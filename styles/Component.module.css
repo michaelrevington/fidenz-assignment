@@ -1,0 +1,92 @@
+.page {
+  min-height: 100vh;
+}
+
+.content {
+  margin-bottom: calc(var(--footer-height) + 25px);
+}
+
+.row,
+.parent,
+.page {
+  width: 100%;
+}
+
+.column,
+.parent {
+  height: 100%;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flexColumn {
+  flex-direction: column;
+}
+
+.textBox,
+.btn {
+  border-radius: 8px;
+  padding: 10px 18px;
+}
+
+.btn {
+  cursor: pointer;
+}
+
+.btn:hover {
+  transform: translateX(5px);
+  box-shadow: -3px 3px 5px black;
+}
+
+.textBox {
+  min-width: 300px;
+  margin: 0 3px;
+  border: 2px solid transparent;
+}
+
+.textBox:focus {
+  border-color: var(--highlight);
+}
+
+.fadeIn {
+  animation: fade-in-animation 0.6s ease-in-out forwards;
+}
+
+.loading {
+  animation: loading-animation 1.2s ease-in-out infinite;
+}
+
+@keyframes fade-in-animation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes loading-animation {
+  0%,
+  100% {
+    background-position-x: 0;
+  }
+  50% {
+    background-position-x: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .textBox {
+    min-width: 250px;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .textBox {
+    min-width: unset;
+  }
+}
