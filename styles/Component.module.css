@@ -60,6 +60,15 @@
   animation: loading-animation 1.2s ease-in-out infinite;
 }
 
+.results0 {
+  color: white;
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+  text-align: center;
+  position: absolute;
+  justify-self: center;
+}
+
 @keyframes fade-in-animation {
   0% {
     opacity: 0;

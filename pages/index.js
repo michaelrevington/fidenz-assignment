@@ -55,7 +55,8 @@ class HomeComponent extends Component {
 
   render() {
     const { isWaiting } = this.state,
-      { data } = this.props;
+      { data } = this.props,
+      objects = Object.entries(data);
 
     let index = 0;
 
@@ -97,15 +98,19 @@ class HomeComponent extends Component {
               </>
             )}
             {!isWaiting &&
-              Object.entries(data).map((elm) => (
-                <WeatherView
-                  data={elm[1]}
-                  key={elm[0]}
-                  id={elm[0]}
-                  type={WeatherView.GROUP_VIEW}
-                  style={{ animationDelay: `${0.2 * index++}s` }}
-                  className={CS.fadeIn}
-                />
+              (objects.length > 0 ? (
+                objects.map((elm) => (
+                  <WeatherView
+                    data={elm[1]}
+                    key={elm[0]}
+                    id={elm[0]}
+                    type={WeatherView.GROUP_VIEW}
+                    style={{ animationDelay: `${0.2 * index++}s` }}
+                    className={CS.fadeIn}
+                  />
+                ))
+              ) : (
+                <div className={CS.results0}>No results found.</div>
               ))}
           </div>
         </section>

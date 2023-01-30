@@ -81,7 +81,7 @@ class WeatherViewPageComponent extends Component {
             </>
           ) : (
             <>
-              <div>No results found.</div>
+              <div className={CS.results0}>No results found.</div>
             </>
           )}
         </section>
