@@ -45,7 +45,8 @@ const request = async (url, params, method, body, headers, onload) => {
           else onload([]);
         })
         .catch((e) => {
-          console.log(e);
+          if (e.response) console.error(e.response.data);
+          else console.error("Error connecting to API.");
           onload([]);
         });
       break;
