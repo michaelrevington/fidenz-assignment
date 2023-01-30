@@ -31,6 +31,6 @@ Replace `${PORT}` with a port number you want.
 
 ```
  
-    docker build  --build-arg PORT=${PORT}  <https://github.com/michaelrevington/fidenz-assignment.git#main> -t fidenz:latest   
+    docker build  --build-arg PORT=${PORT}  https://github.com/michaelrevington/fidenz-assignment.git#main -t fidenz:latest   
 
 ```
