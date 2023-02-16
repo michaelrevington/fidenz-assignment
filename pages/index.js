@@ -26,7 +26,7 @@ export default function Home(props) {
 }
 
 class HomeComponent extends Component {
-  static CONST_CITY_COUNT = 8;
+  static CONST_CITY_COUNT = cities.List.length;
 
   constructor(props) {
     super(props);
