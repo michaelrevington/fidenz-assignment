@@ -10,5 +10,5 @@ export default NextAuth({
             authorization: `${process.env.DOMAIN}/authorize?response_type=code&prompt=login`
         })        
     ],
-    secret: process.env.SECRET
+    secret: process.env.NEXTAUTH_SECRET
 })
