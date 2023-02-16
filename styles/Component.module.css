@@ -27,6 +27,10 @@
   flex-direction: column;
 }
 
+.spaceBet {
+  justify-content: space-between;
+}
+
 .textBox,
 .btn {
   border-radius: 8px;
