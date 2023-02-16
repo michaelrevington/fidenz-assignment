@@ -5,6 +5,8 @@ import Layout from "../src/components/Layout";
 import RouteProgress from "../src/components/RouteProgress";
 import { store } from "../src/store";
 import "../styles/globals.css";
+import { SessionProvider } from "next-auth/react"
+
 
 export default class App extends Component {
   constructor(props) {
@@ -49,7 +51,7 @@ export default class App extends Component {
   }
 
   render() {
-    const { Component, pageProps } = this.props;
+    const { Component, pageProps: {session, pageProps} } = this.props;
 
     return (
       <>
@@ -59,9 +61,11 @@ export default class App extends Component {
         </Head>
         <Provider store={store}>
           <RouteProgress style={this.state.progress} />
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
+          <SessionProvider session={session}>
+            <Layout>
+              <Component {...pageProps} />
+            </Layout>
+          </SessionProvider>
         </Provider>
       </>
     );
