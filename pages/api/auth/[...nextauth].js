@@ -7,7 +7,8 @@ export default NextAuth({
             issuer: process.env.DOMAIN,
             clientId: process.env.CLIENT_ID,
             clientSecret: process.env.CLIENT_SECRET, 
-            authorization: `${process.env.DOMAIN}/authorize?response_type=code&prompt=login`,
-        })
-    ]
+            authorization: `${process.env.DOMAIN}/authorize?response_type=code&prompt=login`
+        })        
+    ],
+    secret: process.env.SECRET
 })
