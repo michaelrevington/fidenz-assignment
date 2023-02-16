@@ -11,11 +11,14 @@ import CS from "../styles/Component.module.css";
 import Styles from "../styles/WeatherView.module.css";
 
 export default function WeatherViewPage(props) {
+  const {id} = useRouter().query;
+
   return (
     <WeatherViewPageComponent
       {...props}
-      data={useSelector((state) => state[props.id])}
+      data={useSelector((state) => state[id])}
       dispatch={useDispatch()}
+      id={id}
     />
   );
 }
@@ -42,6 +45,7 @@ class WeatherViewPageComponent extends Component {
   }
 
   render() {
+    console.log(this.props)
     const { data } = this.props,
       { isWaiting } = this.state;
 
@@ -88,8 +92,4 @@ class WeatherViewPageComponent extends Component {
       </>
     );
   }
-}
-
-export async function getServerSideProps(req, res) {
-  return { props: { ...req.query } };
-}
+} 
