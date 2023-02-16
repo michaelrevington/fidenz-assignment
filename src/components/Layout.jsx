@@ -5,8 +5,11 @@ import Navbar from "./Navbar";
 import CS from "../../styles/Component.module.css";
 
 import BackgroundImage from "../images/Header bg.png";
+import { signIn, useSession } from "next-auth/react";
 
 export default function Layout({ children }) {
+  const { data, status } = useSession();
+
   return (
     <>
       <section
@@ -25,7 +28,22 @@ export default function Layout({ children }) {
       </section>
       <section className={CS.page} style={{ position: "relative" }}>
         <Navbar />
-        {children}
+        {status === "authenticated" ? children : (status === "loading" ? <>
+          <p className={CS.row} style={{ textAlign: "center", padding: "5px", color: "white" }}>Logging in...</p>
+        </> : <>
+          <div className={[CS.center, CS.flexColumn].join(" ")} style={{ overflow: "visible" }}>
+            <p style={{ margin: "8px 0", color: "white" }}>Sorry, You need to be logged in to see this page.</p>
+            <button
+              className={CS.btn}
+              style={{ backgroundColor: "var(--highlight)", color: "white" }}
+              onClick={() => {
+                signIn()
+              }}
+            >
+              Authenticate
+            </button>
+          </div>
+        </>)}
         <Footer />
       </section>
     </>
