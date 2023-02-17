@@ -1,4 +1,10 @@
 .name {
-    margin: 5px;
-    color: white;
+  margin: 5px;
+  color: white;
+}
+
+@media screen and (max-width: 400px) {
+  .name {
+    display: none;
+  }
 }
