@@ -40,7 +40,7 @@ export default function Layout({ children }) {
                 signIn()
               }}
             >
-              Authenticate
+              Login or Sign up
             </button>
           </div>
         </>)}
